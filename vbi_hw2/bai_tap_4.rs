@@ -15,13 +15,11 @@ fn main() {
     println!("{}", v.len())
 }
 
-//the ownership is returned
-fn go(v: &mut Vec<i32>) -> &mut Vec<i32> {
+fn go(v: &mut Vec<i32>) {
 
-    //clone v so we can push 4 to v later on
-    for i in v.clone() {
+    //iter loops over the vector by reference 
+    for i in v.iter() {
         println!("{}", i);
     }
     v.push(4);
-    return v;
 }
